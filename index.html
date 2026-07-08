@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GhostCasino — Play for Value</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 4 20 12 12 20 4 12 12 4Z' fill='%23ff4e00'/></svg>" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/components.css" />
+</head>
+<body>
+  <div id="app" class="app">
+
+    <!-- ============ SIDEBAR ============ -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-top">
+        <button class="burger" id="burger" title="Collapse menu">
+          <span></span><span></span><span></span>
+        </button>
+        <a class="logo" href="#/">
+          <span class="logo-text">GHOST<em>CASINO</em></span>
+        </a>
+      </div>
+
+      <div class="sidebar-promos" id="sidebarPromos"></div>
+
+      <nav class="side-nav" id="sideNav"><!-- rendered by app.js --></nav>
+    </aside>
+
+    <!-- ============ MAIN COLUMN ============ -->
+    <div class="main-col">
+
+      <!-- ============ TOP BAR ============ -->
+      <header class="topbar">
+        <button class="topbar-search" id="searchBtn" title="Search games"></button>
+        <nav class="topbar-tabs">
+          <a href="#/" class="top-tab" data-route="/">CASINO</a>
+          <a href="#/category/live" class="top-tab" data-route="/category/live">LIVE CASINO</a>
+          <a href="#/tournaments" class="top-tab" data-route="/tournaments">EVENTS</a>
+        </nav>
+        <div class="topbar-right">
+          <button class="bonuses-btn" data-nav="#/quests">
+            <span>BONUSES AND PROMO</span><span class="bonuses-gift" id="bonusesGift"></span>
+          </button>
+          <div class="balance-pill" id="balancePill" title="Your Value balance">
+            <span class="value-coin">◆</span>
+            <span class="balance-amount" id="balanceAmount">0</span>
+            <button class="get-value-btn" data-nav="#/wheel">+ Get Value</button>
+          </div>
+          <div class="avatar" data-nav="#/profile" title="Profile" id="topAvatar"></div>
+          <button class="bell" id="bellBtn" title="Notifications"><span id="bellIco"></span><span class="bell-dot" id="bellDot"></span></button>
+        </div>
+      </header>
+
+      <!-- ============ CONTENT ============ -->
+      <main class="content" id="content"><!-- views render here --></main>
+    </div>
+
+    <!-- ============ CHAT PANEL ============ -->
+    <aside class="chat-panel" id="chatPanel">
+      <div class="chat-head">
+        <span class="chat-live-dot"></span>
+        <span class="chat-title">Live Chat</span>
+        <span class="chat-online" id="chatOnline">1,324</span>
+        <button class="chat-collapse" id="chatCollapse" title="Hide chat">›</button>
+      </div>
+      <div class="chat-body" id="chatBody"></div>
+      <form class="chat-input-row" id="chatForm" autocomplete="off">
+        <input type="text" id="chatInput" maxlength="140" placeholder="Your message…" />
+        <button type="submit" class="chat-send" id="chatSend" title="Send"></button>
+      </form>
+    </aside>
+    <button class="chat-expand" id="chatExpand" title="Show chat">‹</button>
+  </div>
+
+  <!-- Search overlay -->
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search games…" />
+      <button id="searchClose">✕</button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+
+  <!-- Toasts -->
+  <div class="toasts" id="toasts"></div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
